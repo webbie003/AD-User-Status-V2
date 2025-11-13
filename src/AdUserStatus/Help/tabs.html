@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Help - Tabs</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="header column">
+    <div class="app-title">
+  	  <img src="images/binoculars.png" alt="ADUserStatus logo" width="36" height="36" />
+	  <span class="app-name">ADUserStatus</span>
+    </div>
+    <h1 class="page-title">Understanding Tabs &amp; Results</h1>
+  </div>
+  <div class="container">
+    <div class="card">
+	<h2>Understanding User Result Tabs</h2>
+	  <p>
+		When you process an input file, the application categorizes each user record into one
+		of four tabs. These tabs help you quickly understand account status and where further
+		action may be required.
+	  </p>
+
+	  <div class="kv-list">
+		<div class="kv-tile">
+		  <div class="kv">
+			<img src="images/Enabled_24px.png" alt="Enabled icon"/>
+			<div class="kv-content">
+			  <strong>Enabled</strong>
+			  <div class="desc">Users found in Active Directory and currently active. These accounts can sign in and access services as normal.</div>
+			</div>
+		  </div>
+		</div>
+
+		<div class="kv-tile">
+		  <div class="kv">
+			<img src="images/Disabled_24px.png" alt="Disabled icon"/>
+			<div class="kv-content">
+			  <strong>Disabled</strong>
+			  <div class="desc">Users found in Active Directory but currently disabled (e.g., departures, suspended access, inactive system accounts).</div>
+			</div>
+		  </div>
+		</div>
+
+		<div class="kv-tile">
+		  <div class="kv">
+			<img src="images/NotFound_24px.png" alt="Not Found icon"/>
+			<div class="kv-content">
+			  <strong>Not Found</strong>
+			  <div class="desc">The email or username could not be matched to an account in Active Directory. This may indicate a typo or that the account has been deleted.</div>
+			</div>
+		  </div>
+		</div>
+
+		<div class="kv-tile">
+		  <div class="kv">
+			<img src="images/External_24px.png" alt="External icon"/>
+			<div class="kv-content">
+			  <strong>External</strong>
+			  <div class="desc">Addresses outside the organization’s internal domains—typically external contacts, contractors, or partners not managed by your domain.</div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  
+	  <p class="note"><strong>Information:</strong> Tab headers will update automatically as the <strong>Check User</strong> process runs which will display a realtime count (e.g., <em>Enabled (24)</em>) for each category.</p>
+	  
+	  <p class="tip"><strong>Tips:</strong> Right-click a row to <strong>Copy Email</strong> or <strong>Copy Row</strong> if you only need details for a single user, otherwise select <strong>Export Results</strong> once the <strong>Check User</strong> process completes to consolidate all tabs into a single Excel file for recordkeeping.</p>
+
+	</div>
+	<div class="card">
+	  <h2>How Internal Domains Are Identified</h2>
+	  <p>
+		During the initial LDAP or LDAPS connection, the application queries Active Directory for
+		domain information to determine which email addresses belong to the organization.
+		This discovery ensures that user accounts are correctly classified as
+		<strong>Internal</strong> (within trusted domains) or <strong>External</strong> (outside the organization).
+	  </p>
+
+	  <p>
+		The internal domain suffixes are retrieved directly from the connected directory’s
+		<code>configurationNamingContext</code> by enumerating <strong>crossRef</strong> objects in the
+		<code>CN=Partitions,CN=Configuration,DC=...</code> container.
+		Each <code>nCName</code> value represents a recognized internal DNS namespace.
+	  </p>
+
+	  <ul>
+		<li>Each discovered suffix (e.g. <code>example.com</code>, <code>example.local</code>) is stored temporarily in memory.</li>
+		<li>Email domains from the input file are compared against this list.</li>
+		<li>If a match is found, the user is considered <strong>Internal</strong>.</li>
+		<li>If no match is found, the user is marked as <strong>External</strong>.</li>
+	  </ul>
+
+	  <p class="tip">
+		<strong>Tip:</strong> This method allows the app to adapt automatically to multi-domain or hybrid environments without needing manual configuration of domain names. </p>
+
+	  <p class="note">
+		<strong>Information:</strong> For troubleshooting, you can manually verify the same information in Active Directory using: <br><code>ldp.exe</code> → Connect to a DC → Browse → Configuration → Partitions → crossRef objects. </p>
+	</div>
+  </div>
+<div class="footer">
+  <a href="index.html" class="button-link">← Back Home</a>
+</div>
+</body>
+</html>

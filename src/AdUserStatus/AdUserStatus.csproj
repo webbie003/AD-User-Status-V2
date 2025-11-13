@@ -1,0 +1,135 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows10.0.17763.0</TargetFramework>
+		<UseWindowsForms>True</UseWindowsForms>
+		<UseWPF>False</UseWPF>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<ApplicationIcon>binoculars.ico</ApplicationIcon>
+		<EnableWindowsFormsHighDpiAutoResizing>true</EnableWindowsFormsHighDpiAutoResizing>
+		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<PublishSingleFile>true</PublishSingleFile>
+		<SelfContained>false</SelfContained>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<PublishTrimmed>false</PublishTrimmed>
+		<PublishReadyToRun>false</PublishReadyToRun>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+		<SignAssembly>False</SignAssembly>
+		<DelaySign>False</DelaySign>
+		<RunPostBuildEvent>Always</RunPostBuildEvent>
+		<NuGetAuditMode>all</NuGetAuditMode>
+		<PlatformTarget>x64</PlatformTarget>
+		<Title>ADUserStatus</Title>
+		<Company>$(Authors)</Company>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<DebugType>None</DebugType>
+		<DebugSymbols>false</DebugSymbols>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <Optimize>True</Optimize>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Help\about.html" />
+	  <None Remove="Help\connection-status.html" />
+	  <None Remove="Help\getting-started.html" />
+	  <None Remove="Help\Images\binoculars.png" />
+	  <None Remove="Help\Images\Disabled_24px.png" />
+	  <None Remove="Help\Images\Enabled_24px.png" />
+	  <None Remove="Help\Images\External_24px.png" />
+	  <None Remove="Help\Images\import-example.png" />
+	  <None Remove="Help\Images\LDAP.png" />
+	  <None Remove="Help\Images\LDAPS.png" />
+	  <None Remove="Help\Images\NotFound_24px.png" />
+	  <None Remove="Help\index.html" />
+	  <None Remove="Help\license.html" />
+	  <None Remove="Help\security.html" />
+	  <None Remove="Help\styles.css" />
+	  <None Remove="Help\tabs.html" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="binoculars.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Help\about.html" />
+	  <EmbeddedResource Include="Help\connection-status.html">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Help\getting-started.html">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Help\Images\binoculars.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Help\Images\Disabled_24px.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Help\Images\Enabled_24px.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Help\Images\External_24px.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Help\Images\import-example.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Help\Images\LDAP.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Help\Images\LDAPS.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Help\Images\NotFound_24px.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Help\index.html">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Help\license.html" />
+	  <EmbeddedResource Include="Help\security.html">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Help\styles.css" />
+	  <EmbeddedResource Include="Help\tabs.html">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ClosedXML" Version="0.105.0" />
+		<PackageReference Include="DnsClient" Version="1.8.0" />
+		<PackageReference Include="ExcelDataReader" Version="3.8.0" />
+		<PackageReference Include="ExcelDataReader.DataSet" Version="3.8.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.10" />
+		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3595.46" />
+		<PackageReference Include="System.DirectoryServices.Protocols" Version="9.0.10" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<!-- Remove the manual WPF DLL stripping; it’s no longer needed when WPF is enabled -->
+	<!-- (Also: do NOT add a FrameworkReference for WindowsForms; it’s implicit.) -->
+
+</Project>

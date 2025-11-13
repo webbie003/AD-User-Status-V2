@@ -1,0 +1,257 @@
+:root {
+      --primary: #005a9e;
+      --link: #0078d7;
+      --bg: #f7f9fb;
+      --card-bg: #fff;
+      --border: #d0d7de;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background-color: var(--bg);
+      color: #333;
+      margin: 0;
+      padding: 0em;
+      line-height: 1.6;
+	  padding-bottom: 80px;
+    }
+
+    header {
+      border-bottom: 2px solid var(--primary);
+      margin-bottom: 2em;
+      padding-bottom: 0.5em;
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 1.8em;
+      margin: 0;
+    }
+
+    p.intro {
+      font-size: 1.1em;
+      color: #444;
+      margin-bottom: 1.5em;
+    }
+
+    ul.topic-list {
+      list-style: none;
+      padding: 0;
+      max-width: 480px;
+    }
+
+    ul.topic-list li {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin: 0.5em 0;
+      padding: 0.8em 1em;
+      transition: background 0.2s ease;
+    }
+
+    ul.topic-list li:hover {
+      background: #eef6fd;
+    }
+
+    ul.topic-list a {
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 500;
+      display: block;
+    }
+
+    ul.topic-list a:hover {
+      text-decoration: underline;
+    }
+	
+	.figure-grid {
+  	  display: flex;
+	  flex-direction: column;
+	  gap: 24px;
+	}
+
+	.header {
+	  position: sticky;
+	  top: 0;
+	  z-index: 1000;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: flex-start;
+	  gap: 8px;
+	  padding: 16px 24px;
+	  border-bottom: 2px solid var(--primary);
+	  background: #fff;
+	  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+	}
+	
+	.container {
+	  padding: 8px 24px 24px;
+	  max-width: 920px;
+	  margin: 0 auto;
+	}
+
+	.app-title {
+	  display: flex;
+	  align-items: center;
+	  gap: 10px;
+	}
+
+	.app-name {
+	  font-size: 1.3em;
+	  font-weight: 600;
+	  color: var(--primary);
+	  letter-spacing: 0.2px;
+	}
+
+	.page-title {
+	  font-size: 1.6em;
+	  font-weight: 700;
+	  color: #222;
+	  margin: 0;
+	}
+
+	.kv {
+	  display: flex;
+	  align-items: flex-start;
+	  gap: 10px;
+	  margin-bottom: 14px;
+	}
+
+	.kv img {
+	  width: 24px;
+	  height: 24px;
+	  flex-shrink: 0;
+	  margin-top: 3px;
+	}
+
+	.kv strong {
+	  color: var(--primary);
+	}
+
+	.kv .desc {
+	  color: #555;
+	  margin-top: 2px;
+	  line-height: 1.4;
+	  font-size: 0.98em;
+	  text-indent: 0;
+	}
+
+	/* Responsive grid for status tiles */
+	.kv-list {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+	  gap: 16px;
+	  margin-top: 8px;
+	}
+
+	/* Tile styling (keeps with your aesthetic) */
+	.kv-tile {
+	  border: 1px solid var(--border);
+	  border-radius: 8px;
+	  padding: 12px 14px;
+	  background: var(--card-bg);
+	}
+	
+	.kv-content strong {
+	  color: var(--primary);
+	  display: block;
+	  margin-bottom: 2px;
+	}
+
+	.kv-content .desc {
+	  color: #555;
+	  line-height: 1.45;
+	  margin-top: 2px;
+	}
+
+	/* Spacing harmony between sections */
+	.card h3 { margin-top: 0.2em; }
+
+	.card h2, .card h3 {
+	  color: var(--primary);
+	  margin-top: 0.5em;
+	}
+
+	.card hr {
+	  border: none;
+	  border-top: 1px solid var(--border);
+	  margin: 20px 0;
+	}
+
+	.topic-buttons {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 20px; /* adds both horizontal and vertical space */
+	  margin-top: 1.8em;
+	  justify-content: flex-start;
+	}
+
+	/* Refined button style */
+	a.button-link {
+	  display: inline-block;
+	  background-color: var(--link);
+	  color: #fff !important;
+	  padding: 14px 26px; /* slightly more padding */
+	  border-radius: 10px;
+	  text-decoration: none;
+	  font-weight: 600;
+	  font-size: 1em;
+	  letter-spacing: 0.2px;
+	  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+	  transition: all 0.2s ease;
+	  text-align: center;
+	  min-width: 260px;
+	}
+
+	a.button-link:hover {
+	  background-color: #005a9e;
+	  transform: translateY(-2px);
+	}
+
+	a.button-link:active {
+	  background-color: #004a86;
+	  transform: translateY(0);
+	}
+
+	a.button-link:focus-visible {
+	  outline: 3px solid rgba(0, 90, 158, 0.4);
+	  outline-offset: 3px;
+	}
+
+	.tip, .note, .warn {
+	  padding: 10px 12px;
+	  border: 1px solid var(--border);
+	  border-radius: 6px;
+	  background: #fff;
+	  margin: 12px 0;
+	}
+	.tip  { border-left: 4px solid #2e7d32; } /* green */
+	.note { border-left: 4px solid #1565c0; } /* blue  */
+	.warn { border-left: 4px solid #c62828; } /* red   */
+
+	.footer {
+	  position: fixed;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  text-align: right;
+	  padding: 16px 24px;
+	  border-top: 1px solid var(--border);
+	  background: var(--card-bg);
+	  z-index: 1000; /* keeps it above content */
+	}
+
+	.footer .button-link {
+	  padding: 12px 28px;
+	  min-width: 180px;
+	  text-align: center;
+	}
+	
+	.developer-banner {
+	  margin: 20px 0;
+	  padding: 12px 18px;
+	  border-left: 4px solid #005bbb;
+	  background: #f3f7fc;
+	  font-size: 1.05rem;
+	  color: #0d1c2e;
+	}
