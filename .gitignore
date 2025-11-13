@@ -1,0 +1,30 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+*.user
+*.rsuser
+*.suo
+*.cache
+*.dbmdl
+*.pdb
+
+# WebView2 cache
+*/EBWebView/*
+
+# VS publish output
+*/Publish/*
+*/publish/*
+
+# Temp help extraction
+*/ADUserStatusHelp/*
+
+# VS noise
+.vs/
+*.tlog
+*.lastcodeanalysissucceeded
+
+# Other generated files
+*.exe
+*.dll
+*.json
