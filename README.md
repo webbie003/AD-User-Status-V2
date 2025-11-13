@@ -1,17 +1,22 @@
-<p>
-  <img src="images/binoculars.png" width="72" height="72" alt="ADUserStatus Logo"/>
-</p>
+<table style="border: none;">
+  <tr style="border: none;">
+    <td style="border: none; padding-right: 10px;">
+      <img src="images/binoculars.png" width="80" alt="ADUserStatusV2 logo">
+    </td>
+    <td style="border: none;">
+      <h1>ADUserStatus (V2)</h1>
+      <strong>by Webbie003</strong>
+    </td>
+  </tr>
+</table>
 
-# ADUserStatus (V2)
+A fast, lightweight Windows desktop utility for administrative checking Active Directory user account status in bulk.  
+This project is the C# / .NET successor to my original PowerShell tool:
+[AD-User-Status](https://github.com/webbie003/AD-User-Status).
 
-A fast, lightweight Windows desktop utility for checking Active Directory user account status in bulk.  
-This project is the modern C# evolution of the original PowerShell-based tool  
-➡️ **[AD-User-Status (PowerShell version)](https://github.com/webbie003/AD-User-Status)**
-
-This version is published as **ADUserStatus V2** in this repository:  
-➡️ **https://github.com/webbie003/AD-User-Status-V2**
-
----
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Platform](https://img.shields.io/badge/platform-Windows-blue)
+![.NET](https://img.shields.io/badge/.NET-8.0-purple)
 
 ## 📌 Overview
 
@@ -29,25 +34,17 @@ It accepts **Excel**, **CSV**, or plain text lists and performs secure LDAP/LDAP
 ✔ Completely portable  
 ✔ Offline, self-contained executable
 
----
-
 ## ✨ Features
 
 - ✔️ Bulk AD account checks from Excel, CSV, or text
 - ✔️ Integrated Windows Authentication — no stored credentials
 - ✔️ LDAPS/LDAP query support (LDAPS Preferred)
-- ✔️ Clear results for:
-  - Enabled  
-  - Disabled  
-  - External  
-  - Not Found  
+- ✔️ Clear results for Enabled / Disabled / Not Found / External
 - ✔️ Export results to Excel (ClosedXML)
 - ✔️ Built-in Help system (HTML-based)
 - ✔️ Portable single-file EXE (no install)
 - ✔️ Fast, modern UI (WinForms + WebView2)
 - ✔️ Fully offline — no external APIs
-
----
 
 ## 🖼️ Application Snapshot
 
@@ -55,20 +52,15 @@ Here is the main interface of **ADUserStatusV2**:
 
 ![ADUserStatusV2 Main Window](images/maininterface.png)
 
----
-
 ## 🚀 Installation
 
 1.Download the latest release:
 👉 https://github.com/webbie003/AD-User-Status-V2/releases  
-2. Extract the ZIP (or run the single-file EXE if using the standalone build)
-3. Run `ADUserStatus.exe`
+2. Run `ADUserStatus.exe`
 
 - No installation required.  
 - No admin rights needed.  
 - Runs on Windows 10/11 with .NET 8 runtime.
-
----
 
 ## 📖 Built-In Help
 
@@ -86,8 +78,6 @@ Open Help via:
 - **F1**  
 - The **Help** button  
 
----
-
 ## 🧩 Technology Stack
 
 - **C# / .NET 8**
@@ -97,8 +87,6 @@ Open Help via:
 - **ExcelDataReader** (Excel parsing)
 - **System.DirectoryServices.Protocols** (LDAP/LDAPS)
 - **DnsClient.NET** (domain controller discovery)
-
----
 
 ## 🧬 Project Background
 
@@ -123,15 +111,11 @@ Rewritten from the ground up with:
 
 This rewrite was also a personal development challenge and a way to deepen understanding of application design, architecture, and domain service interaction.
 
----
-
 ## 🤖 AI-Assisted Development
 
 Portions of this project — including help-text refinement, code organisation, UI polishing, and architectural guidance — were assisted by **OpenAI ChatGPT** as a productivity and learning tool.
 
 All engineering decisions, implementation, debugging, and final structure were done manually.
-
----
 
 ## 👤 Developer
 
@@ -140,16 +124,14 @@ All engineering decisions, implementation, debugging, and final structure were d
 ADUserStatus is an independent, personal project and is **not** developed for, endorsed by, or affiliated with any employer or organization.
 
 ### Contact  
-📧 **aduserstatus@proton.me**
-
----
+**GitHub:** https://github.com/webbie003  
+**Source:** https://github.com/webbie003/AD-User-Status-V2  
+**Contact:** aduserstatus@proton.me
 
 ## 📜 License
 
 This project is released under the **MIT License**.  
 See [`LICENSE`](LICENSE) for details.
-
----
 
 ## ⭐ Support the Project
 
@@ -161,5 +143,3 @@ If you find this tool useful:
 - Contribute ideas  
 
 Your support helps shape future improvements.
-
----
