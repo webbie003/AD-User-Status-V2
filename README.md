@@ -1,14 +1,7 @@
-<table style="border: none;">
-  <tr style="border: none;">
-    <td style="border: none; padding-right: 10px;">
-      <img src="images/binoculars.png" width="80" alt="ADUserStatusV2 logo">
-    </td>
-    <td style="border: none;">
-      <h1>ADUserStatus (V2)</h1>
-      <strong>by Webbie003</strong>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="images/binoculars.png" width="100" alt="Binoculars Logo">
+</p>
+<h1 align="center">ADUserStatus (V2)</h1>
 
 A fast, lightweight Windows desktop utility for administrative checking Active Directory user account status in bulk.  
 This project is the C# / .NET successor to my original PowerShell tool:
