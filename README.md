@@ -1,3 +1,7 @@
+<p>
+  <img src="images/binoculars.png" width="72" height="72" alt="ADUserStatus Logo"/>
+</p>
+
 # ADUserStatus (V2)
 
 A fast, lightweight Windows desktop utility for checking Active Directory user account status in bulk.  
@@ -7,22 +11,23 @@ This project is the modern C# evolution of the original PowerShell-based tool
 This version is published as **ADUserStatus V2** in this repository:  
 ➡️ **https://github.com/webbie003/AD-User-Status-V2**
 
-![ADUserStatus Logo](Help/images/binoculars.png)
-
 ---
 
 ## 📌 Overview
 
-**ADUserStatus** helps administrators, service teams, auditors, and support staff quickly determine:
+**ADUserStatusV2** helps administrators, auditors, analysts, and service teams quickly determine:
 
 - Whether an account exists in Active Directory  
-- Whether it‘s **enabled**, **disabled**, or **not found**  
-- Whether the user is **external** (UPN mismatch)  
-- Whether the account requires attention during onboarding, offboarding, or audit cycles  
+- Whether it is **enabled**, **disabled**, **external**, or **not found**  
+- Whether accounts require attention during onboarding/offboarding  
+- Status of large user lists during audits or license reviews  
 
-The tool accepts **Excel**, **CSV**, or **plain text lists** and provides instant results using LDAPS/LDAP lookups.
+It accepts **Excel**, **CSV**, or plain text lists and performs secure LDAP/LDAPS lookups using integrated Windows Authentication.
 
-No elevated privileges required — works entirely under the current user’s domain permissions.
+✔ No elevated privileges required  
+✔ No installation needed  
+✔ Completely portable  
+✔ Offline, self-contained executable
 
 ---
 
@@ -30,7 +35,7 @@ No elevated privileges required — works entirely under the current user’s do
 
 - ✔️ Bulk AD account checks from Excel, CSV, or text
 - ✔️ Integrated Windows Authentication — no stored credentials
-- ✔️ LDAPS/LDAP query support
+- ✔️ LDAPS/LDAP query support (LDAPS Preferred)
 - ✔️ Clear results for:
   - Enabled  
   - Disabled  
@@ -44,10 +49,11 @@ No elevated privileges required — works entirely under the current user’s do
 
 ---
 
-## 🖼️ Screenshots
+## 🖼️ Application Snapshot
 
-> **You can send me your screenshots and I will format them perfectly**,  
-> or you can replace these placeholders with your actual images.
+Here is the main interface of **ADUserStatusV2**:
+
+![ADUserStatusV2 Main Window](images/maininterface.png)
 
 ---
 
@@ -58,9 +64,9 @@ No elevated privileges required — works entirely under the current user’s do
 2. Extract the ZIP (or run the single-file EXE if using the standalone build)
 3. Run `ADUserStatus.exe`
 
-No installation required.  
-No admin rights needed.  
-Runs on Windows 10/11 with .NET 8 runtime.
+- No installation required.  
+- No admin rights needed.  
+- Runs on Windows 10/11 with .NET 8 runtime.
 
 ---
 
@@ -79,7 +85,6 @@ Open Help via:
 
 - **F1**  
 - The **Help** button  
-- The **Help → Contents** menu
 
 ---
 
@@ -104,7 +109,9 @@ This application is an evolution of my earlier project:
 https://github.com/webbie003/AD-User-Status  
 Originally built using PowerShell and packaged with **ps2exe**.
 
-### 🔗 Current Version — C#  
+### 🔗 Current Version — C# (ADUserStatus V2) 
+This repository contains **ADUserStatus V2**, the full C# rewrite and major evolution of the original tool.
+
 Rewritten from the ground up with:
 
 - Better performance  
@@ -128,10 +135,9 @@ All engineering decisions, implementation, debugging, and final structure were d
 
 ## 👤 Developer
 
-**Webbie_003**
+**Webbie003**
 
-ADUserStatus is an independent, personal project.  
-It is **not** developed for, endorsed by, or affiliated with any employer or organization.
+ADUserStatus is an independent, personal project and is **not** developed for, endorsed by, or affiliated with any employer or organization.
 
 ### Contact  
 📧 **aduserstatus@proton.me**
